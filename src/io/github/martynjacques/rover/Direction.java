@@ -13,47 +13,31 @@ package io.github.martynjacques.rover;
 public enum Direction {
     NORTH(0,1) {
         @Override
-        public Direction left() {
-            return WEST;
-        }
+        public Direction left() { return WEST; }
 
         @Override
-        public Direction right() {
-            return EAST;
-        }
+        public Direction right() { return EAST; }
     },
     EAST(1,0) {
         @Override
-        public Direction right() {
-            return SOUTH;
-        }
+        public Direction right() { return SOUTH; }
 
         @Override
-        public Direction left() {
-            return NORTH;
-        }
+        public Direction left() { return NORTH; }
     },
     SOUTH(0,-1) {
         @Override
-        public Direction right() {
-            return WEST;
-        }
+        public Direction right() { return WEST; }
 
         @Override
-        public Direction left() {
-            return EAST;
-        }
+        public Direction left() { return EAST; }
     },
     WEST(-1,0) {
         @Override
-        public Direction right() {
-            return NORTH;
-        }
+        public Direction right() { return NORTH; }
 
         @Override
-        public Direction left() {
-            return SOUTH;
-        }
+        public Direction left() { return SOUTH; }
     };
 
     private final int xDelta;
