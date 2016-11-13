@@ -17,30 +17,11 @@ public class Rover {
         return coordinates +  " " + direction;
     }
 
-    public void executeInstructions(String instructions) {
-        for(char instruction : instructions.toCharArray()) {
-            switch (instruction) {
-                case 'M':
-                    move();
-                    break;
-                case 'L':
-                    direction = direction.left();
-                    break;
-                case 'R':
-                    direction = direction.right();
-                    break;
-                default:
-                	// Ignore any unknown commands 
-                    System.err.println("Unknown instruction, " + instruction + ", ignoring.");
-            }
-        }
-    }
-
     /*
         Moves the rover forward in the direction that its facing. Ignores
         the command if the rover will be sent off the plateau.
     */
-    private void move() {
+    public void move() {
     	Coordinates coordAfterMove = coordinates.newCoordWithTranslation(
             direction.getXDelta(),
             direction.getYDelta()
@@ -49,5 +30,14 @@ public class Rover {
         if (plateau.coordinateIsInBounds(coordAfterMove))
             coordinates = coordAfterMove;
     }
+    
+    public void turnLeft() {
+    	direction = direction.left();
+    }
+    
+    public void turnRight() {
+    	direction = direction.right();
+    }
+    
 }
 

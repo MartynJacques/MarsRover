@@ -2,6 +2,8 @@ package io.github.martynjacques.rover;
 
 import org.junit.Test;
 import org.junit.Assert;
+import java.util.ArrayList;
+
 
 public class RoverTest {
     
@@ -18,8 +20,11 @@ public class RoverTest {
     public void testFirstProvidedTestCase() {
         Plateau plateau = new Plateau(new Coordinates(5, 5));
         Rover marsRover = new Rover(new Coordinates(1, 2), Direction.NORTH, plateau);
-
-        marsRover.executeInstructions("LMLMLMLMM");
+        CommandParser cmdParser = new CommandParser("LMLMLMLMM");
+        ArrayList<Command> commandList = cmdParser.toRoverCommands();
+        for (Command cmd : commandList) {
+        	cmd.runOn(marsRover);
+        }
 
         Assert.assertEquals("1 3 N", marsRover.toString());
     }
@@ -35,12 +40,15 @@ public class RoverTest {
 	 */
     @Test
     public void testSecondProvidedTestCase() {
-        Plateau plateau = new Plateau(new Coordinates(5, 5));
-        Rover marsRover = new Rover(new Coordinates(3, 3), Direction.EAST, plateau);
-
-        marsRover.executeInstructions("MMRMMRMRRM");
-
-        Assert.assertEquals("5 1 E", marsRover.toString());
+		Plateau plateau = new Plateau(new Coordinates(5, 5));
+		Rover marsRover = new Rover(new Coordinates(3, 3), Direction.EAST, plateau);
+		CommandParser cmdParser = new CommandParser("MMRMMRMRRM");
+		ArrayList<Command> commandList = cmdParser.toRoverCommands();
+		for (Command cmd : commandList) {
+			cmd.runOn(marsRover);
+		}
+		
+		Assert.assertEquals("5 1 E", marsRover.toString());
     }
 
 }
