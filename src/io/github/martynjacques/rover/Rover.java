@@ -30,8 +30,8 @@ public class Rover {
                     direction = direction.right();
                     break;
                 default:
-                    System.err.println("Unknown instruction, exiting now.");
-                    System.exit(2);
+                	// Ignore any unknown commands 
+                    System.err.println("Unknown instruction, " + instruction + ", ignoring.");
             }
         }
     }

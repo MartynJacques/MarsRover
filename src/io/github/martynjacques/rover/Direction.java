@@ -1,14 +1,15 @@
 package io.github.martynjacques.rover;
 
 /*
-Depending on the Direction we are facing a move command will involve a translation
-along the x or y axis in a positive or negative direction. The translations
-for each direction are:
-If facing north, a move will result in the location x, y+1
-If facing south, a move will result in the location x, y-1
-If facing east, a move will result in the location x+1, y
-If facing west, a move will result in the location x-1, y
-*/
+ * Depending on the Direction we are facing a move command will involve a translation
+ * along the x or y axis in a positive or negative direction. The translations
+ * for each direction are:
+ * If facing north, a move will result in the location x, y+1
+ * If facing south, a move will result in the location x, y-1
+ * If facing east, a move will result in the location x+1, y
+ * If facing west, a move will result in the location x-1, y
+ */
+
 public enum Direction {
     NORTH(0,1) {
         @Override
