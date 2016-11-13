@@ -2,19 +2,19 @@ package io.github.martynjacques.rover;
 
 public class Rover {
 
-    private Coordinates coordinate;
+    private Coordinates coordinates;
     private Direction direction;
-    private Plateau plateau;
+    private final Plateau plateau;
 
-    public Rover(Coordinates coordinate, Direction direction, Plateau plateau) {
-        this.coordinate = coordinate;
-        this.direction = direction;
+    public Rover(Coordinates initialCoordinates, Direction initialDirection, Plateau plateau) {
+        coordinates = initialCoordinates;
+        direction = initialDirection;
         this.plateau = plateau;
     }
 
     @Override
     public String toString() {
-        return coordinate +  " " + direction;
+        return coordinates +  " " + direction;
     }
 
     public void executeInstructions(String instructions) {
@@ -41,13 +41,13 @@ public class Rover {
         the command if the rover will be sent off the plateau.
     */
     private void move() {
-    	Coordinates coordAfterMove = coordinate.newCoordWithTranslation(
+    	Coordinates coordAfterMove = coordinates.newCoordWithTranslation(
             direction.getXDelta(),
             direction.getYDelta()
         );
 
         if (plateau.coordinateIsInBounds(coordAfterMove))
-            coordinate = coordAfterMove;
+            coordinates = coordAfterMove;
     }
 }
 

@@ -6,6 +6,7 @@ public class Plateau {
 
     public Plateau(Coordinates topRightCoord) {
         this.topRightCoord = topRightCoord;
+        // lower-left coordinates of a plateau are assumed to be 0, 0
         this.bottomLeftCoord = new Coordinates(0, 0);
     }
 
