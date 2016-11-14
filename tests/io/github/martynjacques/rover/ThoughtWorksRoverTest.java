@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.Assert;
 import java.util.ArrayList;
 
-public class RoverTest {
+public class ThoughtWorksRoverTest {
     
 	/*
 	 * The first test case provided by ThoughtWorks
