@@ -1,7 +1,7 @@
 package io.github.martynjacques.rover;
 
+import static org.junit.Assert.*;
 import org.junit.Test;
-import org.junit.Assert;
 
 public class RoverTest {
 
@@ -13,7 +13,7 @@ public class RoverTest {
 			Direction.NORTH
 		);
 		
-		Assert.assertEquals("3 3 N", marsRover.toString());
+		assertEquals("3 3 N", marsRover.toString());
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ public class RoverTest {
 		
 		marsRover.move();
 		
-		Assert.assertEquals("3 4 N", marsRover.toString());
+		assertEquals("3 4 N", marsRover.toString());
 	}
 	
 	@Test
@@ -39,7 +39,7 @@ public class RoverTest {
 		
 		marsRover.turnLeft();
 		
-		Assert.assertEquals("3 3 W", marsRover.toString());
+		assertEquals("3 3 W", marsRover.toString());
 	}
 	
 	@Test
@@ -52,7 +52,7 @@ public class RoverTest {
 		
 		marsRover.turnRight();
 		
-		Assert.assertEquals("3 3 E", marsRover.toString());
+		assertEquals("3 3 E", marsRover.toString());
 	}
 	
 	@Test
@@ -71,7 +71,7 @@ public class RoverTest {
 			marsRover.turnRight();
 		}
 		
-		Assert.assertEquals("10 10 S", marsRover.toString());
+		assertEquals("10 10 S", marsRover.toString());
 	}
 
 }

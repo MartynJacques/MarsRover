@@ -1,7 +1,6 @@
 package io.github.martynjacques.rover;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class CoordinatesTest {

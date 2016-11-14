@@ -1,6 +1,6 @@
 package io.github.martynjacques.rover;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
@@ -13,9 +13,9 @@ public class CommandParserTest {
 		CommandParser cp = new CommandParser("MLR");
 		ArrayList<RoverCommand> commandAsCommandObjects = cp.toRoverCommands();
 		
-		Assert.assertTrue(commandAsCommandObjects.get(0) instanceof MoveCommand);
-		Assert.assertTrue(commandAsCommandObjects.get(1) instanceof TurnLeftCommand);
-		Assert.assertTrue(commandAsCommandObjects.get(2) instanceof TurnRightCommand);
+		assertTrue(commandAsCommandObjects.get(0) instanceof MoveCommand);
+		assertTrue(commandAsCommandObjects.get(1) instanceof TurnLeftCommand);
+		assertTrue(commandAsCommandObjects.get(2) instanceof TurnRightCommand);
 	}
 	
 	@Test
@@ -24,10 +24,10 @@ public class CommandParserTest {
 		ArrayList<RoverCommand> commandAsCommandObjects = cp.toRoverCommands();
 		
 		// Should only have 3 elements which are M L and R commands
-		Assert.assertEquals(commandAsCommandObjects.size(), 3);
-		Assert.assertTrue(commandAsCommandObjects.get(0) instanceof MoveCommand);
-		Assert.assertTrue(commandAsCommandObjects.get(1) instanceof TurnLeftCommand);
-		Assert.assertTrue(commandAsCommandObjects.get(2) instanceof TurnRightCommand);
+		assertEquals(commandAsCommandObjects.size(), 3);
+		assertTrue(commandAsCommandObjects.get(0) instanceof MoveCommand);
+		assertTrue(commandAsCommandObjects.get(1) instanceof TurnLeftCommand);
+		assertTrue(commandAsCommandObjects.get(2) instanceof TurnRightCommand);
 	}
 
 }

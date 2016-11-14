@@ -1,7 +1,7 @@
 package io.github.martynjacques.rover;
 
+import static org.junit.Assert.*;
 import org.junit.Test;
-import org.junit.Assert;
 import java.util.ArrayList;
 
 public class ThoughtWorksRoverTest {
@@ -26,7 +26,7 @@ public class ThoughtWorksRoverTest {
         roverController.runCommandsOn(marsRover);
         
         // Check the result
-        Assert.assertEquals("1 3 N", marsRover.toString());
+        assertEquals("1 3 N", marsRover.toString());
     }
     
 	/*
@@ -49,7 +49,7 @@ public class ThoughtWorksRoverTest {
         roverController.runCommandsOn(marsRover);
         
         // Check the result
-        Assert.assertEquals("5 1 E", marsRover.toString());
+        assertEquals("5 1 E", marsRover.toString());
     }
 
 }
