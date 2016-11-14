@@ -1,9 +1,9 @@
 package io.github.martynjacques.rover;
 
-public class MoveCommand implements Command {
+public class TurnLeftCommand implements Command {
 	
 	public void execute(Rover rover) {
-		rover.move();
+		rover.turnLeft();
 	}
 	
 }

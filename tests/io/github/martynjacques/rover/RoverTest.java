@@ -18,14 +18,21 @@ public class RoverTest {
 	 */
     @Test
     public void testFirstProvidedTestCase() {
-        Plateau plateau = new Plateau(new Coordinates(5, 5));
-        Rover marsRover = new Rover(new Coordinates(1, 2), Direction.NORTH, plateau);
-        CommandParser cmdParser = new CommandParser("LMLMLMLMM");
-        ArrayList<Command> commandList = cmdParser.toRoverCommands();
-        for (Command cmd : commandList) {
-        	cmd.runOn(marsRover);
-        }
-
+        // Initialise rover
+    	Rover marsRover = new Rover(
+    		new Plateau(new Coordinates(5, 5)),
+        	new Coordinates(1, 2), 
+        	Direction.NORTH
+        );
+        // Parse commands and send to controller
+        ArrayList<Command> commandList = new CommandParser("LMLMLMLMM").toRoverCommands();
+        RoverController rc = new RoverController();
+        rc.setCommandList(commandList);
+        
+        // Execute the commands
+        rc.runCommandsOn(marsRover);
+        
+        // Check the result
         Assert.assertEquals("1 3 N", marsRover.toString());
     }
     
@@ -40,15 +47,22 @@ public class RoverTest {
 	 */
     @Test
     public void testSecondProvidedTestCase() {
-		Plateau plateau = new Plateau(new Coordinates(5, 5));
-		Rover marsRover = new Rover(new Coordinates(3, 3), Direction.EAST, plateau);
-		CommandParser cmdParser = new CommandParser("MMRMMRMRRM");
-		ArrayList<Command> commandList = cmdParser.toRoverCommands();
-		for (Command cmd : commandList) {
-			cmd.runOn(marsRover);
-		}
-		
-		Assert.assertEquals("5 1 E", marsRover.toString());
+        // Initialise rover
+    	Rover marsRover = new Rover(
+    		new Plateau(new Coordinates(5, 5)),
+        	new Coordinates(3, 3), 
+        	Direction.EAST
+        );
+        // Parse commands and send to controller
+        ArrayList<Command> commandList = new CommandParser("MMRMMRMRRM").toRoverCommands();
+        RoverController rc = new RoverController();
+        rc.setCommandList(commandList);
+        
+        // Execute the commands
+        rc.runCommandsOn(marsRover);
+        
+        // Check the result
+        Assert.assertEquals("5 1 E", marsRover.toString());
     }
 
 }

@@ -6,7 +6,7 @@ public class Rover {
     private Direction direction;
     private final Plateau plateau;
 
-    public Rover(Coordinates initialCoordinates, Direction initialDirection, Plateau plateau) {
+    public Rover(Plateau plateau, Coordinates initialCoordinates, Direction initialDirection) {
         coordinates = initialCoordinates;
         direction = initialDirection;
         this.plateau = plateau;

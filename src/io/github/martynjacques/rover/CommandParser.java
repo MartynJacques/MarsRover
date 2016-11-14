@@ -18,13 +18,11 @@ public class CommandParser {
 					commandList.add(new MoveCommand());
 					break;
 				case 'L':
-					commandList.add(new LeftCommand());
+					commandList.add(new TurnLeftCommand());
 					break;
 				case 'R':
-					commandList.add(new RightCommand());
+					commandList.add(new TurnRightCommand());
 					break;
-				default:
-					System.err.println("Unknown command," + commandChar + ", ignoring.");
 			}
 		}
 		
