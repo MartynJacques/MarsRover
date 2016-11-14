@@ -10,7 +10,7 @@ public class ThoughtWorksRoverTest {
 	 * The first test case provided by ThoughtWorks
 	 */
     @Test
-    public void testFirstProvidedTestCase() {
+    public void canExecuteFirstProvidedTestCase() {
         // Initialise rover
     	Rover marsRover = new Rover(
     		new Plateau(new Coordinates(5, 5)),
@@ -33,7 +33,7 @@ public class ThoughtWorksRoverTest {
 	 * The second test case provided by ThoughtWorks
 	 */
     @Test
-    public void testSecondProvidedTestCase() {
+    public void canExecuteSecondProvidedTestCase() {
         // Initialise rover
     	Rover marsRover = new Rover(
     		new Plateau(new Coordinates(5, 5)),

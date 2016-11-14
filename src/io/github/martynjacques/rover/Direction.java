@@ -39,7 +39,7 @@ public enum Direction {
         public Direction left() { return SOUTH; }
     };
 	
-	// The value to be added/subtracted to each coordinate when a move is made 
+	// The value to be added to each coordinate when a move is made 
     private final int xDelta;
     private final int yDelta;
 
