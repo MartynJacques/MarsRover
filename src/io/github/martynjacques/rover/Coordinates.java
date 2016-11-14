@@ -35,12 +35,12 @@ public class Coordinates{
     }
 
     /*
-     * Returns true iff the passed x coordinate >= this x coordinate 
-     * and the passed y coordinate >= this y coordinate i.e. the coordinates
+     * Returns true iff the passed x coordinate > this x coordinate 
+     * and the passed y coordinate > this y coordinate i.e. the coordinates
      * lie outside 
      */
     public boolean hasOutside(Coordinates coordinate) {
-        return coordinate.getX() >= x && coordinate.getY() >= y;
+        return coordinate.getX() > x && coordinate.getY() > y;
     }
 
     /*

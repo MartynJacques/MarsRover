@@ -27,7 +27,6 @@ public class CommandParser {
 					break;
 				case 'R':
 					commandList.add(new TurnRightCommand());
-					break;
 			}
 		}
 		
