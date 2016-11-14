@@ -2,6 +2,11 @@ package io.github.martynjacques.rover;
 
 import java.util.ArrayList;
 
+/*
+ * Takes a string of commands as input (e.g. "MMLRLMM") and exposes behaviour 
+ * to convert these into a list of implemented RoverCommands which can be executed
+ * by the invoker.
+ */
 public class CommandParser {
 	
 	private String commands;
@@ -10,8 +15,8 @@ public class CommandParser {
 		this.commands = commands;
 	}
 	
-	public ArrayList<Command> toRoverCommands() {
-		ArrayList<Command> commandList = new ArrayList<Command>();
+	public ArrayList<RoverCommand> toRoverCommands() {
+		ArrayList<RoverCommand> commandList = new ArrayList<RoverCommand>();
 		for (char commandChar : commands.toCharArray()) {
 			switch (commandChar) {
 				case 'M':

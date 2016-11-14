@@ -1,9 +1,8 @@
 package io.github.martynjacques.rover;
 
 /*
- * Depending on the Direction we are facing a move command will involve a translation
- * along the x or y axis in a positive or negative direction. The translations
- * for each direction are:
+ * Depending on the direction we are facing a move command will involve a translation
+ * along the x or y axis:
  * If facing north, a move will result in the location x, y+1
  * If facing south, a move will result in the location x, y-1
  * If facing east, a move will result in the location x+1, y
@@ -39,7 +38,8 @@ public enum Direction {
         @Override
         public Direction left() { return SOUTH; }
     };
-
+	
+	// The value to be added/subtracted to each coordinate when a move is made 
     private final int xDelta;
     private final int yDelta;
 
