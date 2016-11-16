@@ -2,7 +2,7 @@ package io.github.martynjacques.rover;
 
 /*
  * Represents a rover which is deployed onto a plateau with initial coordinates and direction.
- * Exposes functionality that represent actions it can do. This is the reciever as per the 
+ * Exposes functionality that represent actions it can do. This is the receiver as per the 
  * command design pattern. 
  */
 public class Rover {
